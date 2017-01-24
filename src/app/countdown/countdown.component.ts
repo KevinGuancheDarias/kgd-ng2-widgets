@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'kgd-countdown',
@@ -17,6 +17,9 @@ export class CountdownComponent implements OnInit {
 
   @Input()
   private targetDate: Date;
+
+  @Output()
+  public onDone: EventEmitter<{}> = new EventEmitter();
 
   public get done(): boolean {
     return this._done;
@@ -89,6 +92,7 @@ export class CountdownComponent implements OnInit {
     if (now > this.targetDate ) {
       this._done = true;
       this.stopCounter();
+      this.onDone.emit();
     }else {
       this._days = Math.floor((unixTime.getTime() / 1000) / 86400);
       this._hours = unixTime.getUTCHours();

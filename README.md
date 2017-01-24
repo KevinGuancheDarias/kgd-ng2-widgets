@@ -20,11 +20,18 @@ Then you can use it in any of your templates like:
 ```
 <kgd-countdown [targetDate]="myTerminationDate"></kgd-countdown>
 ``` 
-where __myTerminationDate__ is a javascript Date object representing when will the countdown end.
+where __myTerminationDate__ is a javascript Date object representing when will the countdown end.  
 __Notice:__ The countdown uses the __current timestamp__ as start point.
+
+If you want you can bind to the __done__ event, using onDone
+```
+<kgd-countdown [targetDate]="myTerminationDate" (onDone)="doSomething()"></kgd-countdown>
+```
 
 ## Changelog
 
+### 1.2.0
+Allow binding to done event
 ### 1.1.0
 Allow importing the module, instead of having to import the component and use in the declarations.
 Useful in the future when may be a lot more of widgets!
