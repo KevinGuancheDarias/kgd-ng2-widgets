@@ -16,7 +16,10 @@ import { CountdownComponent } from './countdown/countdown.component';
     FormsModule,
     HttpModule
   ],
+  exports: [
+    CountdownComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class KgdNg2WidgetsModule { }
