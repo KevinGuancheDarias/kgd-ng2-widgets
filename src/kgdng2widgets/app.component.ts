@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'kgd-root',
-  templateUrl: './app.component.html'
+  template: './app.component.html'
 })
 export class AppComponent implements OnInit {
 

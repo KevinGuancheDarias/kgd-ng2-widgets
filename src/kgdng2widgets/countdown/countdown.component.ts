@@ -2,8 +2,33 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'kgd-countdown',
-  templateUrl: './countdown.component.html',
-  styleUrls: ['./countdown.component.less']
+  template: `
+    <div class="kgd-countdown" *ngIf="targetDate && !done">
+      <span *ngIf="days">{{ days }}d</span> 
+      <span *ngIf="hours">{{ hours }}h</span> 
+      <span *ngIf="minutes">{{ minutes }}m</span> 
+      <span *ngIf="seconds">{{ seconds }}s</span>
+    </div>
+
+  `,
+  styles: [`
+    .kgd-countdown {
+        padding: 6px;
+        background-color: rgba(77, 83, 89, 1);
+        border-radius: 4px;
+        display: inline-block;
+        box-shadow: 3px 3px 5px black;
+        span {
+            color: rgba(241, 228, 232, 1);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 5px gray;
+            background-color: rgba(40,46,52,1);
+            padding: 6px;
+            border-radius: inherit;
+        }
+    }
+  `]
 })
 export class CountdownComponent implements OnInit {
 

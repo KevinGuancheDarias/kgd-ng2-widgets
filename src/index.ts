@@ -7,4 +7,4 @@
  * @description
  * Entry point for all public widgets available.
  */
-export * from './src/app';
+export * from './kgdng2widgets/index';
